@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود به حساب کاربری</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <h1 class="logo">فروشگاه آنلاین</h1>
+            <nav>
+                <a href="index.html">صفحه اصلی</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="login-section">
+        <div class="login-card">
+            <h2>ورود به حساب کاربری</h2>
+            <p>برای ادامه، اطلاعات خود را وارد کنید.</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">ایمیل</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">رمز عبور</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="رمز عبور خود را وارد کنید"
+                        required
+                        minlength="6"
+                    >
+                </div>
+
+                <button type="submit" class="login-button">
+                    ورود
+                </button>
+
+                <p id="loginMessage" aria-live="polite"></p>
+            </form>
+
+            <p class="back-home">
+                <a href="index.html">بازگشت به صفحه اصلی</a>
+            </p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
