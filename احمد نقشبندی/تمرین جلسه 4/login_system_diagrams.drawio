@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mxfile host="app.diagrams.net" modified="2026-10-31T17:15:00.000Z" agent="ChatGPT" version="25.0.3" type="device">
+  <diagram id="class-diagram" name="Class Diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="page" vertex="1" parent="1" value="&lt;b&gt;LoginPage&lt;/b&gt;" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;">
+          <mxGeometry x="650" y="70" width="300" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="page_body" vertex="1" parent="1" value="- title: String = &quot;صفحه ورود&quot;&lt;br&gt;- direction: RTL&lt;br&gt;&lt;hr&gt;+ render(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=5;whiteSpace=wrap;overflow=hidden;">
+          <mxGeometry x="650" y="100" width="300" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="form" vertex="1" parent="1" value="&lt;b&gt;LoginForm&lt;/b&gt;" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;">
+          <mxGeometry x="650" y="300" width="300" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="form_body" vertex="1" parent="1" value="- id: String = &quot;loginForm&quot;&lt;br&gt;&lt;hr&gt;+ submit(): void&lt;br&gt;+ preventDefault(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=5;whiteSpace=wrap;overflow=hidden;">
+          <mxGeometry x="650" y="330" width="300" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="email" vertex="1" parent="1" value="&lt;b&gt;EmailInput&lt;/b&gt;" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;">
+          <mxGeometry x="150" y="300" width="270" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="email_body" vertex="1" parent="1" value="- type: email&lt;br&gt;- required: Boolean&lt;br&gt;- value: String&lt;br&gt;&lt;hr&gt;+ getValue(): String" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=5;whiteSpace=wrap;overflow=hidden;">
+          <mxGeometry x="150" y="330" width="270" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="password" vertex="1" parent="1" value="&lt;b&gt;PasswordInput&lt;/b&gt;" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;">
+          <mxGeometry x="1180" y="300" width="270" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="password_body" vertex="1" parent="1" value="- type: password&lt;br&gt;- required: Boolean&lt;br&gt;- value: String&lt;br&gt;&lt;hr&gt;+ getValue(): String" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=5;whiteSpace=wrap;overflow=hidden;">
+          <mxGeometry x="1180" y="330" width="270" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="button" vertex="1" parent="1" value="&lt;b&gt;SubmitButton&lt;/b&gt;" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;">
+          <mxGeometry x="150" y="520" width="270" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="button_body" vertex="1" parent="1" value="- label: String = &quot;ورود&quot;&lt;br&gt;- type: submit&lt;br&gt;&lt;hr&gt;+ click(): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=5;whiteSpace=wrap;overflow=hidden;">
+          <mxGeometry x="150" y="550" width="270" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="controller" vertex="1" parent="1" value="&lt;b&gt;LoginController&lt;/b&gt;" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;">
+          <mxGeometry x="650" y="520" width="300" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="controller_body" vertex="1" parent="1" value="- email: String&lt;br&gt;- password: String&lt;br&gt;&lt;hr&gt;+ handleSubmit(event): void&lt;br&gt;+ validateFields(): Boolean&lt;br&gt;+ showMessage(text, color): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=5;whiteSpace=wrap;overflow=hidden;">
+          <mxGeometry x="650" y="550" width="300" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="message" vertex="1" parent="1" value="&lt;b&gt;MessageArea&lt;/b&gt;" style="swimlane;html=1;startSize=30;rounded=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;">
+          <mxGeometry x="1180" y="520" width="270" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="message_body" vertex="1" parent="1" value="- id: String = &quot;message&quot;&lt;br&gt;- textContent: String&lt;br&gt;- color: String&lt;br&gt;&lt;hr&gt;+ display(text, color): void" style="text;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=5;whiteSpace=wrap;overflow=hidden;">
+          <mxGeometry x="1180" y="550" width="270" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="page" target="form" value="contains" style="endArrow=diamond;endFill=1;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="form" target="email" value="reads value" style="endArrow=open;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="form" target="password" value="reads value" style="endArrow=open;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="button" target="form" value="submits" style="endArrow=open;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="form" target="controller" value="submit event" style="endArrow=open;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="controller" target="message" value="updates" style="endArrow=open;html=1;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="use-case-diagram" name="Use Case Diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="system" vertex="1" parent="1" value="&lt;b&gt;Login Page System&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;verticalAlign=top;align=center;spacingTop=12;fontStyle=1;">
+          <mxGeometry x="390" y="80" width="850" height="760" as="geometry"/>
+        </mxCell>
+        <mxCell id="visitor" vertex="1" parent="1" value="Visitor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;">
+          <mxGeometry x="100" y="380" width="90" height="150" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_open" vertex="1" parent="1" value="Open login page" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;">
+          <mxGeometry x="520" y="150" width="250" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_email" vertex="1" parent="1" value="Enter email" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;">
+          <mxGeometry x="520" y="270" width="250" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_password" vertex="1" parent="1" value="Enter password" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;">
+          <mxGeometry x="870" y="270" width="250" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_submit" vertex="1" parent="1" value="Submit login form" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;">
+          <mxGeometry x="690" y="400" width="250" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_browser" vertex="1" parent="1" value="Browser validates required fields&lt;br&gt;and email format" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;">
+          <mxGeometry x="430" y="560" width="300" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_app" vertex="1" parent="1" value="Check fields are not empty" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;">
+          <mxGeometry x="820" y="560" width="300" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_error" vertex="1" parent="1" value="Display validation message" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;">
+          <mxGeometry x="430" y="720" width="300" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc_success" vertex="1" parent="1" value="Display success message" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;">
+          <mxGeometry x="820" y="720" width="300" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="visitor" target="uc_open" value="" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="visitor" target="uc_email" value="" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="visitor" target="uc_password" value="" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="visitor" target="uc_submit" value="" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="uc_submit" target="uc_browser" value="include" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a6" edge="1" parent="1" source="uc_submit" target="uc_app" value="include" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="uc_browser" target="uc_error" value="invalid input" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a8" edge="1" parent="1" source="uc_app" target="uc_error" value="empty values" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="a9" edge="1" parent="1" source="uc_app" target="uc_success" value="valid non-empty values" style="endArrow=none;html=1;rounded=0;">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

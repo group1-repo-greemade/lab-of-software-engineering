@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه ورود</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="login-box">
+        <h1>خوش آمدید</h1>
+        <p>برای ورود اطلاعات خود را وارد کنید</p>
+
+        <form id="loginForm">
+            <label for="email">ایمیل</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="example@gmail.com"
+                required
+            >
+
+            <label for="password">رمز عبور</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="رمز عبور خود را وارد کنید"
+                required
+            >
+
+            <button type="submit">ورود</button>
+
+            <p id="message" aria-live="polite"></p>
+        </form>
+    </div>
+
+</body>
+</html>
