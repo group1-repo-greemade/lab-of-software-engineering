@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        :root {
+            --background: #f6f3ee;
+            --surface: #fffdfb;
+            --text: #1f1a17;
+            --muted: #5a534b;
+            --primary: #0e6b52;
+            --primary-hover: #0b5542;
+            --error: #9f1239;
+            --success: #166534;
+            --border: #e3dacd;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: Tahoma, "Segoe UI", system-ui, sans-serif;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* Center the card (and anything under it) without moving a page header. */
+        body:has(.auth-card) {
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+        }
+
+        .site-header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 64px;
+            padding-inline: 6.5rem;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .site-header h1 {
+            margin: 0;
+            font-size: 1.125rem;
+            font-weight: 700;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        /* dir=rtl: inline-end is the physical left. inline-start would be the right. */
+        .site-header form {
+            position: absolute;
+            inset-inline-end: 0.75rem;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 380px;
+            margin-inline: auto;
+            padding: 1.5rem 1.15rem 1.25rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(31, 26, 23, 0.08);
+        }
+
+        .auth-card h1 {
+            margin: 0 0 1rem;
+            font-size: 1.35rem;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .auth-card form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            min-width: 0;
+        }
+
+        label {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            min-width: 0;
+            margin-top: 0.35rem;
+            padding: 0.65rem 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--surface);
+            color: var(--text);
+            font: inherit;
+        }
+
+        input:focus-visible,
+        button:focus-visible,
+        .link-toggle:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem 1rem;
+            border: 0;
+            border-radius: 10px;
+            background: var(--primary);
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            line-height: 1.2;
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+        }
+
+        button:hover:not(:disabled) {
+            background: var(--primary-hover);
+        }
+
+        button:disabled {
+            opacity: 0.55;
+            cursor: not-allowed;
+        }
+
+        .auth-card button:not(.link-toggle) {
+            width: 100%;
+        }
+
+        .site-header button {
+            width: auto;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .link-toggle {
+            display: block;
+            width: fit-content;
+            margin: 0.25rem auto 0;
+            padding: 0;
+            border: 0;
+            background: none;
+            color: var(--primary);
+            font: inherit;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: underline;
+            text-underline-offset: 0.18em;
+            cursor: pointer;
+        }
+
+        .link-toggle:hover {
+            color: var(--primary-hover);
+        }
+
+        .alert {
+            margin: 0 0 0.85rem;
+            padding: 0.7rem 0.8rem;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            line-height: 1.45;
+            overflow-wrap: anywhere;
+        }
+
+        .alert.error {
+            background: #fff0f3;
+            color: var(--error);
+            border: 1px solid #f3c2ce;
+        }
+
+        .alert.success {
+            background: #e7f6ec;
+            color: var(--success);
+            border: 1px solid #b7e0c2;
+        }
+
+        .user-count {
+            margin: 0.75rem 0 0;
+            color: var(--muted);
+            font-size: 0.8125rem;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        @media (min-width: 480px) {
+            .auth-card {
+                padding: 2rem 1.75rem 1.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-31T01:03:40Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="usecase-task1" name="Use Case Diagram">
+    <mxGraphModel dx="1900" dy="1350" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1350" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uc-boundary" value="Task1 — Authentication Web Application" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#334e68;strokeWidth=2;fontColor=#18324b;fontSize=18;fontStyle=1;align=left;verticalAlign=top;spacingLeft=18;spacingTop=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="95" width="1360" height="1115" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-title" value="&lt;b&gt;Use Case Diagram&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#64748b&quot; style=&quot;font-size:12px&quot;&gt;Guest and authenticated-user interactions&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#18324b;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="650" y="112" width="600" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-visitor" value="&lt;b&gt;Visitor&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Unauthenticated&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffffff;strokeColor=#334e68;strokeWidth=2;fontColor=#18324b;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="55" y="390" width="145" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-auth" value="&lt;b&gt;Authenticated User&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Logged-in&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#ffffff;strokeColor=#334e68;strokeWidth=2;fontColor=#18324b;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1685" y="745" width="160" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-login-page" value="&lt;b&gt;View Login Form&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;GET /login&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#eaf2ff;strokeColor=#3976a8;strokeWidth=2;fontColor=#17324d;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="430" y="195" width="285" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-signup-page" value="&lt;b&gt;View Sign-up Form&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;GET /signup&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#eaf2ff;strokeColor=#3976a8;strokeWidth=2;fontColor=#17324d;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="195" width="285" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-user-count" value="Display Registered&lt;br&gt;User Count" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="195" width="285" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-login" value="&lt;b&gt;Log In&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;POST /login&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#eaf2ff;strokeColor=#3976a8;strokeWidth=2;fontColor=#17324d;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="430" y="365" width="285" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-register" value="&lt;b&gt;Register Account&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;POST /signup&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#eaf2ff;strokeColor=#3976a8;strokeWidth=2;fontColor=#17324d;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1145" y="365" width="285" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-verify" value="Verify Username&lt;br&gt;and Password" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="420" y="555" width="305" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-validate-signup" value="Validate Registration Data&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;3–20 char username; 8–128 char password&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="555" width="355" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-csrf" value="Validate CSRF Token&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Required on every POST&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="555" width="285" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-create-session" value="Create Authenticated Session&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Store user_id&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="420" y="755" width="305" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-resolve-user" value="Resolve Current User&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Read session user_id&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="755" width="305" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-home" value="&lt;b&gt;View Protected Home&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;GET /home&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#eaf2ff;strokeColor=#3976a8;strokeWidth=2;fontColor=#17324d;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="905" width="285" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-logout" value="&lt;b&gt;Log Out&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;POST /logout&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#eaf2ff;strokeColor=#3976a8;strokeWidth=2;fontColor=#17324d;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="790" y="1055" width="285" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-clear-session" value="Clear Session&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Remove user_id and CSRF data&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontColor=#334155;fontSize=12;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="1055" width="300" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="a-visitor-loginpage" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=none;startArrow=none;" edge="1" parent="1" source="actor-visitor" target="uc-login-page">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="330" />
+              <mxPoint x="360" y="239" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-visitor-login" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=none;startArrow=none;" edge="1" parent="1" source="actor-visitor" target="uc-login">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="450" />
+              <mxPoint x="360" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-visitor-signuppage" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=none;startArrow=none;" edge="1" parent="1" source="actor-visitor" target="uc-signup-page">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="305" />
+              <mxPoint x="980" y="305" />
+              <mxPoint x="980" y="239" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-visitor-register" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=none;startArrow=none;" edge="1" parent="1" source="actor-visitor" target="uc-register">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="250" y="500" />
+              <mxPoint x="980" y="500" />
+              <mxPoint x="980" y="411" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-auth-home" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=none;startArrow=none;" edge="1" parent="1" source="actor-auth" target="uc-home">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1635" y="840" />
+              <mxPoint x="1500" y="840" />
+              <mxPoint x="1500" y="949" />
+              <mxPoint x="1100" y="949" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-auth-logout" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#475569;strokeWidth=2;endArrow=none;startArrow=none;" edge="1" parent="1" source="actor-auth" target="uc-logout">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1635" y="900" />
+              <mxPoint x="1530" y="900" />
+              <mxPoint x="1530" y="1099" />
+              <mxPoint x="1100" y="1099" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-loginpage-count" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-login-page" target="uc-user-count">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="755" y="239" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-signuppage-count" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-signup-page" target="uc-user-count">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="239" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-login-verify" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-login" target="uc-verify">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="575" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-login-csrf" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-login" target="uc-csrf">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="415" />
+              <mxPoint x="760" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-login-session" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-login" target="uc-create-session">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="390" y="420" />
+              <mxPoint x="390" y="799" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-register-validation" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-register" target="uc-validate-signup">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1287" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-register-csrf" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-register" target="uc-csrf">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1090" y="410" />
+              <mxPoint x="1090" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-home-current-user" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-home" target="uc-resolve-user">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="950" />
+              <mxPoint x="1100" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-logout-csrf" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-logout" target="uc-csrf">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="740" y="1100" />
+              <mxPoint x="740" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-logout-clear" value="«include»" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#0f766e;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#0f766e;fontSize=12;fontStyle=2;endArrow=open;endFill=0;" edge="1" parent="1" source="uc-logout" target="uc-clear-session">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="1100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uc-note" value="&lt;b&gt;Scope notes&lt;/b&gt;&lt;br&gt;• Successful sign-up redirects to &lt;code&gt;/login&lt;/code&gt;; it does not log the user in automatically.&lt;br&gt;• All POST routes require a valid CSRF token; a successful login resets the anonymous session before setting &lt;code&gt;user_id&lt;/code&gt;.&lt;br&gt;• No password-reset, email-verification, or role-management use case is implemented." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff7e6;strokeColor=#d69e36;fontColor=#704d12;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="45" y="1030" width="230" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-legend" value="&lt;b&gt;Relationship legend&lt;/b&gt;&lt;br&gt;Solid line: actor association&lt;br&gt;Dashed arrow «include»: mandatory included behavior" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;fontColor=#334155;fontSize=11;align=left;verticalAlign=middle;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="1225" width="370" height="85" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="class-task1" name="Class Diagram">
+    <mxGraphModel dx="1900" dy="1450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1450" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cl-title" value="&lt;b&gt;Class Diagram — Task1 Authentication Architecture&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#64748b&quot; style=&quot;font-size:12px&quot;&gt;Source-aligned UML: concrete classes, Python modules, session payload, and SQLite table&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontColor=#18324b;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="160" y="25" width="1020" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="class-app" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;module&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;app.py — Application&lt;/b&gt;&lt;/div&gt;&lt;hr&gt;&lt;b&gt;Factory / helpers&lt;/b&gt;&lt;br&gt;+ create_app(test_config=None): Flask&lt;br&gt;+ get_csrf_token(): str&lt;br&gt;+ current_user(): UserRow | None&lt;br&gt;+ _reject_bad_csrf(): None&lt;br&gt;+ _security_headers(response)&lt;hr&gt;&lt;b&gt;Route handlers (nested in create_app)&lt;/b&gt;&lt;br&gt;+ index() — GET /&lt;br&gt;+ login() — GET, POST /login&lt;br&gt;+ signup() — GET, POST /signup&lt;br&gt;+ home() — GET /home&lt;br&gt;+ logout() — POST /logout&lt;br&gt;+ render_auth(...), redirect_home_if_logged_in()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f7fc;strokeColor=#3b6385;strokeWidth=2;fontColor=#1e293b;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="55" y="125" width="500" height="525" as="geometry" />
+        </mxCell>
+        <mxCell id="class-auth" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;module&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;auth_service.py — AuthService&lt;/b&gt;&lt;/div&gt;&lt;hr&gt;&lt;b&gt;Constants&lt;/b&gt;&lt;br&gt;USERNAME_PATTERN = [A-Za-z0-9_]{3,20}&lt;br&gt;MIN_PASSWORD_LENGTH = 8&lt;br&gt;MAX_PASSWORD_LENGTH = 128&lt;br&gt;DUMMY_HASH: str&lt;hr&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;br&gt;+ signup(username, password): Result&lt;br&gt;+ login(username, password): Result&lt;hr&gt;&lt;font color=&quot;#475569&quot;&gt;Uses Werkzeug password hashing/checking; performs no Flask or SQL operations.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f7fc;strokeColor=#3b6385;strokeWidth=2;fontColor=#1e293b;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="690" y="125" width="470" height="390" as="geometry" />
+        </mxCell>
+        <mxCell id="class-result" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;dataclass, frozen&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Result&lt;/b&gt;&lt;/div&gt;&lt;hr&gt;&lt;b&gt;Attributes&lt;/b&gt;&lt;br&gt;+ ok: bool&lt;br&gt;+ error: str | None = None&lt;br&gt;+ user_id: int | None = None&lt;hr&gt;&lt;font color=&quot;#475569&quot;&gt;Returned by signup() and login().&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b6385;strokeWidth=2;fontColor=#1e293b;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="125" width="390" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="class-session" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;Flask session payload&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Session&lt;/b&gt;&lt;/div&gt;&lt;hr&gt;&lt;b&gt;Keys used by app.py&lt;/b&gt;&lt;br&gt;+ user_id: int | None&lt;br&gt;+ csrf: str | None&lt;hr&gt;&lt;font color=&quot;#475569&quot;&gt;Signed session cookie managed by Flask. On successful login, the old session is cleared before user_id is set; logout clears the session.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b6385;strokeWidth=2;fontColor=#1e293b;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="420" width="390" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="class-config" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;config.py — Config&lt;/b&gt;&lt;/div&gt;&lt;hr&gt;&lt;b&gt;Class attributes&lt;/b&gt;&lt;br&gt;+ DATABASE: Path&lt;br&gt;+ SECRET_KEY: str&lt;br&gt;+ SESSION_COOKIE_HTTPONLY: bool&lt;br&gt;+ SESSION_COOKIE_SAMESITE: str&lt;br&gt;+ SESSION_COOKIE_SECURE: bool&lt;br&gt;+ MAX_CONTENT_LENGTH: int&lt;hr&gt;&lt;b&gt;Module function&lt;/b&gt;&lt;br&gt;+ load_secret_key(instance_dir): str" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b6385;strokeWidth=2;fontColor=#1e293b;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="55" y="790" width="500" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="class-database" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;module&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;database.py — Database&lt;/b&gt;&lt;/div&gt;&lt;hr&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;br&gt;+ get_db(): sqlite3.Connection&lt;br&gt;+ close_db(e=None): None&lt;br&gt;+ init_db(): None&lt;br&gt;+ init_app(app: Flask): None&lt;hr&gt;&lt;font color=&quot;#475569&quot;&gt;Owns request-scoped SQLite connection lifecycle and applies schema.sql.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f7fc;strokeColor=#3b6385;strokeWidth=2;fontColor=#1e293b;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="690" y="730" width="470" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="class-repository" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;module&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;repository.py — Repository&lt;/b&gt;&lt;/div&gt;&lt;hr&gt;&lt;b&gt;Operations&lt;/b&gt;&lt;br&gt;+ create_user(username, password_hash): int&lt;br&gt;+ get_user_by_username(username): Row | None&lt;br&gt;+ get_user_by_id(user_id): Row | None&lt;br&gt;+ count_users(): int&lt;hr&gt;&lt;font color=&quot;#475569&quot;&gt;Only module that writes SQL. Uses parameterized statements and commits/rolls back inserts.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f7fc;strokeColor=#3b6385;strokeWidth=2;fontColor=#1e293b;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="760" width="500" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="class-duplicate" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;exception&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;DuplicateUsernameError&lt;/b&gt;&lt;/div&gt;&lt;hr&gt;Raised by Repository.create_user() on a uniqueness conflict; caught by AuthService.signup()." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#3b6385;strokeWidth=2;fontColor=#1e293b;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="55" y="1210" width="500" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="class-user" value="&lt;div style=&quot;text-align:center&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;SQLite table / sqlite3.Row&amp;gt;&amp;gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;users&lt;/b&gt;&lt;/div&gt;&lt;hr&gt;&lt;b&gt;Columns&lt;/b&gt;&lt;br&gt;+ id: INTEGER {PK, AUTOINCREMENT}&lt;br&gt;+ username: TEXT {NOT NULL, UNIQUE, NOCASE, length 3..20}&lt;br&gt;+ password_hash: TEXT {NOT NULL}&lt;br&gt;+ created_at: TEXT {NOT NULL, default datetime(now)}" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#effaf5;strokeColor=#23835d;strokeWidth=2;fontColor=#14532d;fontSize=12;align=left;verticalAlign=top;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="690" y="1160" width="470" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="dep-app-auth" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-app" target="class-auth">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-app-repo" value="uses: current_user(), count_users()" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-app" target="class-repository">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="650" />
+              <mxPoint x="1250" y="650" />
+              <mxPoint x="1250" y="900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-app-db" value="initializes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-app" target="class-database">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="600" />
+              <mxPoint x="600" y="900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-app-config" value="loads Config" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-app" target="class-config">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="700" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-app-session" value="reads / updates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-app" target="class-session">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="610" y="100" />
+              <mxPoint x="1515" y="100" />
+              <mxPoint x="1515" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-auth-repo" value="persists / reads users" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-auth" target="class-repository">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1190" y="320" />
+              <mxPoint x="1190" y="900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-auth-result" value="returns" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-auth" target="class-result">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1260" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-auth-duplicate" value="catches" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-auth" target="class-duplicate">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="640" y="520" />
+              <mxPoint x="640" y="1285" />
+              <mxPoint x="570" y="1285" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-repo-db" value="gets connection" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-repository" target="class-database">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1260" y="1100" />
+              <mxPoint x="1260" y="1120" />
+              <mxPoint x="650" y="1120" />
+              <mxPoint x="650" y="900" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc-repo-user" value="reads / writes 0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23835d;strokeWidth=2;fontColor=#166534;fontSize=11;endArrow=none;" edge="1" parent="1" source="class-repository" target="class-user">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1550" y="1130" />
+              <mxPoint x="1120" y="1130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dep-db-config" value="uses DATABASE path" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#64748b;strokeWidth=1.8;dashed=1;dashPattern=6 4;fontColor=#475569;fontSize=11;endArrow=open;endFill=0;" edge="1" parent="1" source="class-database" target="class-config">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="880" />
+              <mxPoint x="570" y="880" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="class-note" value="&lt;b&gt;Modeling notes&lt;/b&gt;&lt;br&gt;• &lt;code&gt;app.py&lt;/code&gt;, &lt;code&gt;auth_service.py&lt;/code&gt;, &lt;code&gt;repository.py&lt;/code&gt;, and &lt;code&gt;database.py&lt;/code&gt; are Python modules, not declared Python classes; they are shown as UML module components with their real functions.&lt;br&gt;• &lt;code&gt;Result&lt;/code&gt; and &lt;code&gt;Config&lt;/code&gt; are actual classes. &lt;code&gt;DuplicateUsernameError&lt;/code&gt; is an actual exception class.&lt;br&gt;• The project returns SQLite &lt;code&gt;sqlite3.Row&lt;/code&gt; records; &lt;code&gt;users&lt;/code&gt; is the real SQL table, not a Python ORM model." style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff7e6;strokeColor=#d69e36;fontColor=#704d12;fontSize=11;align=left;verticalAlign=top;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="20" width="600" height="85" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

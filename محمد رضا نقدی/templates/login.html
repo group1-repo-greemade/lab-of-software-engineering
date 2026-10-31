@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}{% if mode == "signup" %}ثبت‌نام{% else %}ورود{% endif %}{% endblock %}
+
+{% block content %}
+<section class="auth-card">
+    <h1>{% if mode == "signup" %}ثبت‌نام{% else %}ورود{% endif %}</h1>
+
+    {% if error %}
+    <p class="alert error" role="alert">{{ error }}</p>
+    {% endif %}
+    {% if success %}
+    <p class="alert success" role="status">{{ success }}</p>
+    {% endif %}
+
+    <form method="post" action="{% if mode == 'signup' %}/signup{% else %}/login{% endif %}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+
+        <div>
+            <label for="username">نام کاربری</label>
+            <input id="username" type="text" name="username" value="{{ username }}" autocomplete="username"
+                autocapitalize="none" spellcheck="false" dir="ltr" required maxlength="20">
+        </div>
+
+        <div>
+            <label for="password">رمز عبور</label>
+            <input id="password" type="password" name="password" dir="ltr" required minlength="8" maxlength="128"
+                autocomplete="{% if mode == 'signup' %}new-password{% else %}current-password{% endif %}">
+        </div>
+
+        <button type="submit">{% if mode == "signup" %}ثبت‌نام{% else %}ورود{% endif %}</button>
+    </form>
+
+    {% if mode == "signup" %}
+    <a class="link-toggle" href="/login">حساب دارید؟ ورود</a>
+    {% else %}
+    <a class="link-toggle" href="/signup">حساب ندارید؟ ثبت‌نام</a>
+    {% endif %}
+</section>
+
+<p class="user-count">تعداد کاربران ثبت‌شده: {{ user_count }}</p>
+{% endblock %}
