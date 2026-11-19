@@ -1,0 +1,19 @@
+@startuml
+skinparam shadowing false
+[*] --> Confirmed : ثبت سفارش موفق
+
+state "تأیید شده" as Confirmed
+state "در حال آماده‌سازی" as Processing
+state "ارسال شده" as Shipped
+state "تحویل شده" as Delivered
+state "لغو شده" as Cancelled
+
+Confirmed --> Processing : مدیر شروع پردازش می‌کند
+Confirmed --> Cancelled : لغو سفارش
+Processing --> Shipped : تحویل به شرکت حمل
+Processing --> Cancelled : لغو سفارش
+Shipped --> Delivered : تحویل به مشتری
+
+Delivered --> [*]
+Cancelled --> [*]
+@enduml

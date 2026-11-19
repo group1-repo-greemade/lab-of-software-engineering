@@ -1,0 +1,98 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide circle
+
+class User {
+  +id: String
+  +name: String
+  +email: String
+  -passwordHash: String
+  +role: UserRole
+  +createdAt: DateTime
+}
+
+class Product {
+  +id: String
+  +name: String
+  +category: String
+  +description: String
+  +price: Integer
+  +stock: Integer
+  +emoji: String
+  +featured: Boolean
+  +createdAt: DateTime
+  +updatedAt: DateTime
+}
+
+class Cart {
+  +userId: UUID
+  +items: List<CartItem>
+  +getItemCount(): Integer
+  +getTotal(): Integer
+}
+
+class CartItem {
+  +productId: String
+  +quantity: Integer
+}
+
+class Order {
+  +id: UUID
+  +code: String
+  +userId: UUID
+  +customerName: String
+  +customerEmail: String
+  +phone: String
+  +address: String
+  +paymentMethod: PaymentMethod
+  +paymentStatus: String
+  +status: OrderStatus
+  +total: Integer
+  +createdAt: DateTime
+  +updatedAt: DateTime
+}
+
+class OrderItem {
+  +productId: String
+  +name: String
+  +unitPrice: Integer
+  +quantity: Integer
+  +lineTotal: Integer
+}
+
+class CartService {
+  +getCart(userId)
+  +addCartItem(userId, productId, quantity)
+  +setCartItemQuantity(userId, productId, quantity)
+  +removeCartItem(userId, productId)
+}
+
+class OrderService {
+  +createOrder(userId, payload)
+  +getUserOrders(userId)
+  +getAllOrders()
+  +changeOrderStatus(orderId, nextStatus)
+}
+
+class JsonStore {
+  +readDatabase()
+  +updateDatabase(mutator)
+}
+
+enum UserRole { customer; admin }
+enum PaymentMethod { cod; demo }
+enum OrderStatus { confirmed; processing; shipped; delivered; cancelled }
+
+User "1" -- "0..1" Cart : owns
+Cart "1" *-- "0..*" CartItem
+CartItem "*" --> "1" Product
+User "1" -- "0..*" Order : places
+Order "1" *-- "1..*" OrderItem
+OrderItem "*" --> "0..1" Product : product snapshot
+User --> UserRole
+Order --> PaymentMethod
+Order --> OrderStatus
+CartService ..> JsonStore
+OrderService ..> JsonStore
+@enduml

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TechMart؛ فروشگاه آنلاین لوازم دیجیتال و گجت‌های هوشمند">
+  <meta name="theme-color" content="#111827">
+  <title>تک‌مارت | فروشگاه آنلاین تکنولوژی</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/app.js" type="module" defer></script>
+</head>
+<body>
+  <div class="announcement">ارسال رایگان برای سفارش‌های بالای ۵ میلیون تومان</div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="صفحه اصلی تک‌مارت">
+        <span class="brand-mark">T</span>
+        <span>تک<span class="brand-accent">‌مارت</span></span>
+      </a>
+
+      <nav class="main-nav" aria-label="منوی اصلی">
+        <a class="active" href="#home">خانه</a>
+        <a href="#products">فروشگاه</a>
+        <a href="#benefits">خدمات ما</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button cart-trigger" id="cartButton" type="button" aria-label="سبد خرید">
+          <span aria-hidden="true">🛒</span><span class="cart-count" id="cartCount">۰</span>
+        </button>
+        <button class="button button-dark login-trigger" id="accountButton" type="button">ورود / ثبت‌نام</button>
+        <button class="avatar-button hidden" id="userMenuButton" type="button" aria-label="حساب کاربری">ب</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> دنیای تکنولوژی، یک قدم نزدیک‌تر</span>
+          <h1>انتخاب هوشمندانه<br><span>برای زندگی دیجیتال</span></h1>
+          <p>جدیدترین گجت‌ها و لوازم دیجیتال را با تجربه خریدی ساده، امن و مطمئن پیدا کن.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#products">مشاهده محصولات <span>←</span></a>
+            <span class="hero-note">محصولات منتخب با ضمانت اصالت</span>
+          </div>
+          <div class="hero-stats">
+            <div><strong>۱۰۰٪</strong><span>تضمین اصالت</span></div>
+            <div><strong>۲۴/۷</strong><span>پشتیبانی آنلاین</span></div>
+            <div><strong>۷ روز</strong><span>فرصت بازگشت</span></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="تصویر تزئینی گجت‌های دیجیتال">
+          <div class="art-glow"></div>
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="device-card device-headphone"><span>🎧</span><small>PURE SOUND</small></div>
+          <div class="device-card device-watch"><span>⌚</span></div>
+          <div class="device-card device-phone"><span>📱</span><small>SMART LIFE</small></div>
+          <div class="art-caption"><span class="caption-line"></span><span>TECH FOR EVERY DAY</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item"><span class="trust-icon">🚚</span><div><strong>ارسال سریع</strong><small>به سراسر کشور</small></div></div>
+        <div class="trust-item"><span class="trust-icon">🛡️</span><div><strong>خرید مطمئن</strong><small>تضمین اصالت کالا</small></div></div>
+        <div class="trust-item"><span class="trust-icon">↩️</span><div><strong>بازگشت آسان</strong><small>۷ روز ضمانت بازگشت</small></div></div>
+        <div class="trust-item"><span class="trust-icon">☎️</span><div><strong>پشتیبانی واقعی</strong><small>همیشه کنار شما</small></div></div>
+      </div>
+    </section>
+
+    <section class="products-section section-space" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">منتخب تک‌مارت</span>
+            <h2>محصولات فروشگاه</h2>
+            <p>ابزارهایی برای تجربه بهتر دنیای دیجیتال</p>
+          </div>
+          <div class="product-tools">
+            <label class="search-box">
+              <span aria-hidden="true">⌕</span>
+              <input id="searchInput" type="search" placeholder="جست‌وجوی محصول..." autocomplete="off">
+            </label>
+            <select id="sortSelect" aria-label="مرتب‌سازی محصولات">
+              <option value="featured">پیشنهادی</option>
+              <option value="price-asc">ارزان‌ترین</option>
+              <option value="price-desc">گران‌ترین</option>
+              <option value="name">نام محصول</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="category-list" id="categoryList" aria-label="دسته‌بندی محصولات"></div>
+        <div class="product-grid" id="productGrid" aria-live="polite">
+          <div class="loading-state">در حال بارگذاری محصولات...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo-section" id="benefits">
+      <div class="container promo-card">
+        <div>
+          <span class="promo-label">تجربه خرید بهتر</span>
+          <h2>تکنولوژی خوب،<br>زندگی ساده‌تر.</h2>
+          <p>از انتخاب محصول تا ثبت سفارش، همه‌چیز را در تک‌مارت ساده کرده‌ایم.</p>
+          <a href="#products" class="button button-light">شروع خرید <span>←</span></a>
+        </div>
+        <div class="promo-visual" aria-hidden="true"><span class="promo-ring"></span><span class="promo-emoji">✨</span><span class="promo-small">SMART<br>CHOICE</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark">T</span><span>تک<span class="brand-accent">‌مارت</span></span></a>
+      <p>تک‌مارت؛ انتخابی هوشمندانه برای دنیای دیجیتال.</p>
+      <span class="footer-copy">© ۱۴۰۵ - نسخه آموزشی پروژه مهندسی نرم‌افزار</span>
+    </div>
+  </footer>
+
+  <dialog class="modal" id="authDialog">
+    <div class="modal-head">
+      <div><span class="eyebrow">به تک‌مارت خوش آمدید</span><h2 id="authTitle">ورود به حساب</h2></div>
+      <button class="close-button" type="button" data-close="authDialog" aria-label="بستن">×</button>
+    </div>
+    <div class="auth-tabs">
+      <button class="auth-tab active" type="button" data-auth-mode="login">ورود</button>
+      <button class="auth-tab" type="button" data-auth-mode="register">ثبت‌نام</button>
+    </div>
+    <form id="authForm" class="form-stack">
+      <label class="form-field hidden" id="nameField">نام و نام خانوادگی<input name="name" type="text" minlength="2" maxlength="60" autocomplete="name" placeholder="مثلاً علی رضایی"></label>
+      <label class="form-field">ایمیل<input name="email" type="email" required autocomplete="email" placeholder="name@example.com"></label>
+      <label class="form-field">رمز عبور<input name="password" type="password" required minlength="8" autocomplete="current-password" placeholder="حداقل ۸ نویسه"></label>
+      <p class="form-message" id="authMessage" role="alert"></p>
+      <button class="button button-primary button-full" type="submit" id="authSubmit">ورود به حساب</button>
+    </form>
+  </dialog>
+
+  <dialog class="modal modal-wide" id="cartDialog">
+    <div class="modal-head">
+      <div><span class="eyebrow">سبد خرید شما</span><h2>جزئیات سفارش</h2></div>
+      <button class="close-button" type="button" data-close="cartDialog" aria-label="بستن">×</button>
+    </div>
+    <div id="cartContents"></div>
+  </dialog>
+
+  <dialog class="modal modal-wide" id="ordersDialog">
+    <div class="modal-head">
+      <div><span class="eyebrow">حساب کاربری</span><h2>سفارش‌های من</h2></div>
+      <button class="close-button" type="button" data-close="ordersDialog" aria-label="بستن">×</button>
+    </div>
+    <div id="ordersContents"></div>
+  </dialog>
+
+  <dialog class="modal modal-wide" id="adminDialog">
+    <div class="modal-head">
+      <div><span class="eyebrow">مدیریت فروشگاه</span><h2>پنل مدیریت</h2></div>
+      <button class="close-button" type="button" data-close="adminDialog" aria-label="بستن">×</button>
+    </div>
+    <div id="adminContents"></div>
+  </dialog>
+
+  <dialog class="modal" id="userDialog">
+    <div class="modal-head"><div><span class="eyebrow">حساب کاربری</span><h2>سلام، <span id="userNameLabel"></span></h2></div><button class="close-button" type="button" data-close="userDialog" aria-label="بستن">×</button></div>
+    <div class="user-menu-actions">
+      <button class="button button-outline button-full" id="myOrdersButton" type="button">مشاهده سفارش‌ها</button>
+      <button class="button button-outline button-full hidden" id="adminPanelButton" type="button">ورود به پنل مدیریت</button>
+      <button class="button button-danger button-full" id="logoutButton" type="button">خروج از حساب</button>
+    </div>
+  </dialog>
+
+  <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

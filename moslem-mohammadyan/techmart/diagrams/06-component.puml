@@ -1,0 +1,56 @@
+@startuml
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+actor "مشتری / مدیر" as User
+
+package "Client" {
+  [مرورگر وب] as Browser
+  [صفحات HTML] as HTML
+  [CSS واکنش‌گرا] as CSS
+  [JavaScript UI] as JS
+}
+
+package "Node.js Application" {
+  [Express Application] as Express
+  [Auth Routes] as AuthRoutes
+  [Product Routes] as ProductRoutes
+  [Cart Routes] as CartRoutes
+  [Order Routes] as OrderRoutes
+  [Admin Routes] as AdminRoutes
+  [Session & Auth Middleware] as Middleware
+  [Cart Service] as CartService
+  [Order Service] as OrderService
+  [JSON Data Store] as Store
+}
+
+package "Persistence" {
+  database "data/store.json" as JsonFile
+  [Express Session Memory Store] as SessionStore
+}
+
+User --> Browser
+Browser --> HTML
+Browser --> CSS
+Browser --> JS
+JS --> Express : HTTP / JSON
+Express --> AuthRoutes
+Express --> ProductRoutes
+Express --> CartRoutes
+Express --> OrderRoutes
+Express --> AdminRoutes
+AuthRoutes --> Middleware
+CartRoutes --> Middleware
+OrderRoutes --> Middleware
+AdminRoutes --> Middleware
+CartRoutes --> CartService
+OrderRoutes --> OrderService
+AdminRoutes --> OrderService
+AuthRoutes --> Store
+ProductRoutes --> Store
+CartService --> Store
+OrderService --> Store
+Store --> JsonFile : read / write
+Middleware --> SessionStore : session lookup
+Express --> Browser : static assets + API response
+@enduml

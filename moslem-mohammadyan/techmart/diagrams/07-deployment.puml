@@ -1,0 +1,25 @@
+@startuml
+skinparam shadowing false
+
+node "دستگاه کاربر" as ClientDevice {
+  artifact "مرورگر وب" as Browser
+  artifact "HTML / CSS / JavaScript" as Frontend
+}
+
+node "ماشین میزبان پروژه" as Host {
+  node "Node.js Runtime" as Node {
+    artifact "TechMart Express Server" as Server
+    artifact "Session Middleware" as Session
+    artifact "Business Services" as Services
+  }
+  node "فضای ذخیره‌سازی محلی" as Storage {
+    database "data/store.json" as DataFile
+  }
+}
+
+Browser --> Server : HTTP (localhost:3000)
+Server --> Frontend : ارسال فایل‌های استاتیک
+Server --> Session : مدیریت نشست در حافظه
+Server --> Services : فراخوانی منطق برنامه
+Services --> DataFile : خواندن و نوشتن JSON
+@enduml

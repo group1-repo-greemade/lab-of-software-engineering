@@ -1,0 +1,30 @@
+@startuml
+actor "مشتری" as Customer
+participant "رابط کاربری مرورگر" as UI
+participant "مسیر Orders API" as API
+participant "واسط احراز هویت" as Auth
+participant "OrderService" as Service
+database "فایل داده JSON" as Store
+
+Customer -> UI : تکمیل فرم و انتخاب ثبت سفارش
+UI -> API : POST /api/orders + Session Cookie
+API -> Auth : بررسی نشست و کاربر
+Auth -> Store : خواندن کاربران
+Store --> Auth : اطلاعات کاربر
+Auth --> API : تأیید هویت
+API -> Service : createOrder(userId, payload)
+Service -> Service : اعتبارسنجی آدرس، تلفن و روش پرداخت
+Service -> Store : خواندن سبد، محصولات و موجودی
+Store --> Service : اطلاعات سبد و محصولات
+Service -> Service : کنترل موجودی و محاسبه مبلغ کل
+Service -> Store : ثبت سفارش + کاهش موجودی + خالی‌کردن سبد
+Store --> Service : سفارش ذخیره‌شده
+Service --> API : سفارش جدید
+API --> UI : پاسخ 201 و اطلاعات سفارش
+UI --> Customer : نمایش کد سفارش و وضعیت آن
+
+note over Service,Store
+تغییرات سفارش، موجودی و سبد خرید
+در یک عملیات نوشتن متوالی ذخیره می‌شوند.
+end note
+@enduml
