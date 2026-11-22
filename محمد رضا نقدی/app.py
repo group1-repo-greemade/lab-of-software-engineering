@@ -1,23 +1,12 @@
-"""HTTP routes. No SQL.
+"""Flask routes for the authentication application.
 
-The session keeps user_id and a CSRF token. Passwords are never stored,
-logged, or sent back to the template.
+The session stores only the authenticated user id and a CSRF token.
+Password values are never stored in the session, logged, or rendered.
 """
-
 import hmac
 import secrets
 
-from flask import (
-    Flask,
-    abort,
-    flash,
-    get_flashed_messages,
-    redirect,
-    render_template,
-    request,
-    session,
-    url_for,
-)
+from flask import Flask, abort, flash, get_flashed_messages, redirect, render_template, request, session, url_for
 
 import auth_service
 import database
@@ -30,7 +19,7 @@ _NOT_FOUND = "صفحه پیدا نشد."
 
 
 def get_csrf_token() -> str:
-    """Return this session's CSRF token, creating an ASCII token if needed."""
+    """Return this session's CSRF token, creating a fresh token if needed."""
     token = session.get("csrf")
     if not isinstance(token, str) or not token or not token.isascii():
         token = secrets.token_urlsafe(32)
@@ -39,11 +28,7 @@ def get_csrf_token() -> str:
 
 
 def current_user():
-    """Return the row for session['user_id'], or None.
-
-    If the id is present but the account is gone or the value is not an int,
-    the session is cleared so a stale login cannot continue.
-    """
+    """Return the signed-in user or clear a stale/malformed session."""
     user_id = session.get("user_id")
     if user_id is None:
         return None
@@ -58,19 +43,13 @@ def current_user():
 
 
 def _form_text(name: str) -> str:
-    """Read a form field. Missing or non-string values become ''."""
+    """Read a form field. Missing or non-string values become an empty string."""
     value = request.form.get(name, "")
-    if not isinstance(value, str):
-        return ""
-    return value
+    return value if isinstance(value, str) else ""
 
 
 def _reject_bad_csrf() -> None:
-    """Reject POST requests whose CSRF token does not match the session.
-
-    There is no test bypass. A non-ASCII token makes compare_digest raise;
-    that is still a 400, not a 500.
-    """
+    """Reject POST requests without a matching session CSRF token."""
     if request.method != "POST":
         return
     expected = session.get("csrf")
@@ -89,7 +68,6 @@ def _security_headers(response):
     response.headers["Cache-Control"] = "no-store"
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["X-Frame-Options"] = "DENY"
-    # unsafe-inline is needed only because the CSS is inline by project requirement.
     response.headers["Content-Security-Policy"] = (
         "default-src 'none'; style-src 'unsafe-inline'; "
         "form-action 'self'; base-uri 'none'; frame-ancestors 'none'"
@@ -98,7 +76,7 @@ def _security_headers(response):
 
 
 def create_app(test_config: dict | None = None) -> Flask:
-    """Build the app. test_config overrides Config (DATABASE, TESTING, SECRET_KEY)."""
+    """Create and configure the application; tests may inject an isolated DB."""
     app = Flask(__name__)
     app.config.from_object(Config)
     if test_config is not None:
@@ -161,7 +139,7 @@ def create_app(test_config: dict | None = None) -> Flask:
         password = _form_text("password")
         result = auth_service.login(username, password)
         if result.ok and type(result.user_id) is int:
-            # Drop the anonymous session so a fixed cookie cannot be reused.
+            # Rotate the anonymous session before creating the authenticated one.
             session.clear()
             session["user_id"] = result.user_id
             return redirect(url_for("home"), code=303)
@@ -184,9 +162,10 @@ def create_app(test_config: dict | None = None) -> Flask:
 
     @app.get("/home")
     def home():
-        if current_user() is None:
+        user = current_user()
+        if user is None:
             return redirect(url_for("login"))
-        return render_template("home.html")
+        return render_template("home.html", user=user, user_count=repository.count_users())
 
     @app.post("/logout")
     def logout():
@@ -197,5 +176,5 @@ def create_app(test_config: dict | None = None) -> Flask:
 
 
 if __name__ == "__main__":
-    # Never enable debug=True with this setup: the Werkzeug debugger allows remote code execution.
+    # The built-in server is for local development only; debug mode stays off.
     create_app().run(host="127.0.0.1", port=5000, debug=False)

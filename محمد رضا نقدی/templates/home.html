@@ -1,14 +1,40 @@
 {% extends "base.html" %}
-
-{% block title %}سلام دوستان{% endblock %}
-
+{% block title %}داشبورد حساب کاربری{% endblock %}
 {% block content %}
 <header class="site-header">
-    <h1>سلام دوستان</h1>
+    <h1>سامانه احراز هویت</h1>
     <form method="post" action="/logout">
         <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
-        <button type="submit">خروج</button>
+        <button type="submit">خروج از حساب</button>
     </form>
 </header>
-<main></main>
+<main class="dashboard">
+    <section class="dashboard-card" aria-labelledby="welcome-title">
+        <h2 id="welcome-title">خوش آمدید، {{ user["username"] }}</h2>
+        <p class="dashboard-intro">
+            ورود شما با موفقیت انجام شده است. این صفحه فقط برای کاربران واردشده قابل مشاهده است.
+        </p>
+        <div class="account-grid">
+            <div class="account-item">
+                <span>نام کاربری</span>
+                <strong dir="ltr">{{ user["username"] }}</strong>
+            </div>
+            <div class="account-item">
+                <span>شناسه حساب</span>
+                <strong>#{{ user["id"] }}</strong>
+            </div>
+            <div class="account-item">
+                <span>تاریخ ایجاد حساب (UTC)</span>
+                <strong>{{ user["created_at"] }}</strong>
+            </div>
+            <div class="account-item">
+                <span>تعداد کاربران ثبت‌شده</span>
+                <strong>{{ user_count }}</strong>
+            </div>
+        </div>
+        <p class="dashboard-note">
+            نشست کاربر فقط شناسه حساب را نگهداری می‌کند؛ رمز عبور خام در نشست ذخیره نمی‌شود.
+        </p>
+    </section>
+</main>
 {% endblock %}
